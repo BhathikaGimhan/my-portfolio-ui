@@ -1,0 +1,586 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes boxShadowAnimation {
+    0% {
+        filter: 
+            drop-shadow(0px -12px 5px rgba(159, 7, 254, 0.5)) 
+            drop-shadow(0px 12px 5px rgba(0, 187, 245, 0.5)) 
+            drop-shadow(-12px 0px 5px rgba(97, 255, 0, 0.5)) 
+            drop-shadow(12px 0px 5px rgba(255, 0, 0, 0.5));
+    }
+    25% {
+        filter: 
+            drop-shadow(0px -12px 5px rgba(0, 187, 245, 0.5)) 
+            drop-shadow(0px 12px 5px rgba(97, 255, 0, 0.5)) 
+            drop-shadow(-12px 0px 5px rgba(255, 0, 0, 0.5)) 
+            drop-shadow(12px 0px 5px rgba(159, 7, 254, 0.5));
+    }
+    50% {
+        filter: 
+            drop-shadow(0px -12px 5px rgba(97, 255, 0, 0.5)) 
+            drop-shadow(0px 12px 5px rgba(255, 0, 0, 0.5)) 
+            drop-shadow(-12px 0px 5px rgba(159, 7, 254, 0.5)) 
+            drop-shadow(12px 0px 5px rgba(0, 187, 245, 0.5));
+    }
+    75% {
+        filter: 
+            drop-shadow(0px -12px 5px rgba(255, 0, 0, 0.5)) 
+            drop-shadow(0px 12px 5px rgba(159, 7, 254, 0.5)) 
+            drop-shadow(-12px 0px 5px rgba(0, 187, 245, 0.5)) 
+            drop-shadow(12px 0px 5px rgba(97, 255, 0, 0.5));
+    }
+    100% {
+        filter: 
+            drop-shadow(0px -12px 5px rgba(159, 7, 254, 0.5)) 
+            drop-shadow(0px 12px 5px rgba(0, 187, 245, 0.5)) 
+            drop-shadow(-12px 0px 5px rgba(97, 255, 0, 0.5)) 
+            drop-shadow(12px 0px 5px rgba(255, 0, 0, 0.5));
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.list-view{
+    @apply flex flex-col justify-start items-start gap-10;
+}
+.list{
+    @apply flex-col gap-1
+}
+.list-items{
+    @apply flex flex-col gap-10 relative ml-20
+}
+.list-items{
+    @apply before:content-[""] before:absolute before:w-[12px] before:h-[12px] before:bg-white before:rounded-full before:top-3 before:left-[-20px] before:z-50
+            after:content-[""] after:absolute after:w-[1px] after:h-[100%] after:bg-white after:top-3 after:-left-[14px] after:z-50
+}
+.role{
+    @apply text-2xl font-['roboto'] font-[400] text-white
+}
+.sub-heading{
+    @apply mr-20
+}
+.company-name{
+    @apply text-2xl font-['roboto'] font-[400] text-white
+}
+.date{
+    @apply text-sm font-['roboto'] font-[400] text-[#ffffff83]
+}
+.main-color{
+    @apply text-blue-500
+}
+
+.skill-card{
+    @apply flex flex-col justify-center items-center border-[2px] border-blue-700 lg:p-5 max-lg:p-2 rounded-3xl
+}
+.skill-heading{
+    @apply text-2xl max-md:text-xl font-['roboto'] font-[400] text-white 
+}
+.skill-body{
+    @apply text-3xl  font-['roboto'] font-[400] text-[#ffffff] animate-pulse
+}
+.skill-section{
+    @apply grid lg:grid-cols-4 max-lg:grid-cols-3 lg:gap-4 max-lg:gap-1 
+}
+@media (min-width: 1500px){
+    h5{
+        @apply text-white
+    }
+
+    h1{
+        @apply text-6xl font-[700] font-['Raleway'] ;
+    }
+    h3{
+        @apply text-4xl font-[700] font-['Raleway'] ;
+    }
+    .card{
+        @apply fixed
+    }
+    .card-body{
+        @apply bg-neutral-900 w-[480px] h-[640px] shadow-lg shadow-black p-5 flex-col rounded-[0_53px_53px_0px];
+    }
+
+    .card-title{
+        @apply pl-5 pt-1 fixed text-[35px] font-[400] font-['Rochester'];
+    }
+    .card-right-title{
+        @apply pr-5 pt-1 text-white text-right font-['Roboto'] text-[20px] font-[400];
+    }
+    .plate{
+        @apply rounded-full flex flex-col m-auto top-1 relative justify-center items-center bg-neutral-300 w-[200px] h-[200px] flex-shrink-0;
+        
+        
+    }
+    .image{
+        @apply w-[175px] h-[175px] hover:w-[195px] hover:h-[195px] transition-all duration-200 rounded-full m-auto justify-center items-center z-50 absolute;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .card-containt{
+        @apply relative text-white -top-1 w-full p-10 text-center text-[32px] font-[400] font-['RibeyeMarrow'];
+    }
+
+    .copy-right{
+        @apply text-center font-["Roboto"] -top-6 relative text-[rgb(255,255,255,0.36)] font-[400];
+    }
+    .card-link{
+        @apply flex flex-row relative;
+    }
+    .link-plate{
+        @apply w-[70px] h-[70px] -top-4 relative m-5 shadow-black shadow-md flex-shrink-0 bg-black hover:bg-white transition-all duration-700 ease-in-out rounded-full;
+    }
+    .link-plate:hover{
+        @apply transition-all duration-300 ease-in-out;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .icon{
+        @apply flex justify-center items-center w-full h-full text-[25px] text-white hover:text-[30px] hover:text-black transition-all duration-500 ease-in-out;
+    }
+    .contact{
+        @apply w-[144px] h-[36px] transition-all duration-300 bg-blue-600 hover:bg-blue-800  shadow-lg -top-2 relative shadow-black pr-5 m-auto pl-5 rounded-full justify-center items-center text-white text-center;
+    }
+    .contact button{
+        @apply relative top-[6px]
+    }
+
+
+    .nav-continer{
+        @apply flex  items-center -mt-[500px] relative ;
+    }
+    .nav{
+        @apply flex flex-col;
+    }
+    .nav-bar{
+        @apply bg-neutral-900 p-3 flex flex-col justify-items-center w-[55px] h-fit mr-5 fixed  shadow-md shadow-black rounded-full
+    }
+
+    .nav-btn{
+        @apply w-[55px] justify-center items-center m-auto relative -mt-20 mr-5 shadow-md cursor-pointer hover:bg-neutral-950 shadow-black h-[55px] rounded-full bg-neutral-900 p-4 hover:p-3 transition-all duration-300 gap-5
+    }
+    .nav-btn-icon{
+        @apply flex justify-center items-center w-full h-full text-[10px]
+    }
+
+    .bar-icon{
+        @apply w-full hover:bg-[#00000031] transition-all duration-300 p-3 rounded-full text-[20px] my-1 -ml-3 relative m-auto shadow-white
+    }
+    .main-color{
+        @apply text-blue-500
+    }
+
+
+
+    .main-body{
+        @apply h-screen flex flex-col justify-center items-center ml-[650px] mr-[70px]
+    }
+    .body{
+        @apply relative ;
+    }
+    .container{
+        @apply relative;
+    }
+    .main-para{
+        @apply text-lg flex justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .para{
+        @apply text-lg flex w-[550px] justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .scroll-project{
+        @apply flex justify-end w-36 items-end m-auto;
+    }
+    .scroll-png{
+        @apply  duration-1000 w-[100px] h-[105px] transition-all;
+        animation: spin 3s linear infinite;
+        
+    }
+    .scroll-icon{
+        @apply text-[30px] absolute animate-pulse hover:animate-none justify-end items-end mb-9 mr-9;
+    }
+    .section{
+        @apply flex flex-row relative;
+    }
+    .section-name{
+        @apply text-[180px] font-['Monoton'] animate-pulse -left-10 -mt-0 text-[#00000042] absolute -z-0 top-10;
+    }
+    .exp{
+        @apply flex relative pt-20 flex-row gap-32 justify-center
+    }
+    .exp-section{
+        @apply w-[150px] flex flex-col justify-center items-center text-center
+    }
+    .number{
+        @apply font-['BungeeShade'] mb-4 text-blue-600 font-[500]
+    }
+}
+
+
+@media (min-width: 1280px) and (max-width: 1500px) {
+    h5{
+        @apply text-white
+    }
+
+    h1{
+        @apply text-5xl font-[700] font-['Raleway'] ;
+    }
+    h3{
+        @apply text-3xl font-[700] font-['Raleway'] ;
+    }
+    .card{
+        @apply fixed
+    }
+    .card-body{
+        @apply bg-neutral-900 w-[400px] h-[640px] shadow-lg shadow-black p-5 flex-col rounded-[0_53px_53px_0px];
+    }
+
+    .card-title{
+        @apply pl-5 pt-1 fixed text-[28px] font-[400] font-['Rochester'];
+    }
+    .card-right-title{
+        @apply pr-5 pt-1 text-white text-right font-['Roboto'] text-[17px] font-[400];
+    }
+    .plate{
+        @apply rounded-full flex flex-col m-auto top-1 relative justify-center items-center bg-neutral-300 w-[200px] h-[200px] flex-shrink-0;
+        
+        
+    }
+    .image{
+        @apply w-[175px] h-[175px] hover:w-[195px] hover:h-[195px] transition-all duration-200 rounded-full m-auto justify-center items-center z-50 absolute;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .card-containt{
+        @apply relative text-white -top-1 w-full p-10 text-center text-[29px] font-[400] font-['RibeyeMarrow'];
+    }
+
+    .copy-right{
+        @apply text-center font-["Roboto"] -top-6 relative text-[rgb(255,255,255,0.36)] font-[400];
+    }
+    .card-link{
+        @apply flex flex-row relative;
+    }
+    .link-plate{
+        @apply w-[50px] h-[50px] -top-4 relative m-5 shadow-black shadow-md flex-shrink-0 bg-black hover:bg-white transition-all duration-700 ease-in-out rounded-full;
+    }
+    .link-plate:hover{
+        @apply transition-all duration-300 ease-in-out;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .icon{
+        @apply flex justify-center items-center w-full h-full text-[25px] text-white hover:text-[30px] hover:text-black transition-all duration-500 ease-in-out;
+    }
+    .contact{
+        @apply w-[144px] h-[36px] transition-all duration-300 bg-blue-600 hover:bg-blue-800  shadow-lg -top-2 relative shadow-black pr-5 m-auto pl-5 rounded-full justify-center items-center text-white text-center;
+    }
+    .contact button{
+        @apply relative top-[6px]
+    }
+
+
+    .nav-continer{
+        @apply flex  items-center -mt-[500px]  relative ;
+    }
+    .nav{
+        @apply flex flex-col;
+    }
+    .nav-bar{
+        @apply bg-neutral-900 p-3 flex flex-col justify-items-center w-[50px] h-fit mr-5 fixed  shadow-md shadow-black rounded-full
+    }
+
+    .nav-btn{
+        @apply w-[50px] justify-center items-center m-auto relative -mt-20 mr-5 shadow-md cursor-pointer hover:bg-neutral-950 shadow-black h-[50px] rounded-full bg-neutral-900 p-4 hover:p-3 transition-all duration-300 gap-5
+    }
+    .nav-btn-icon{
+        @apply flex justify-center items-center w-full h-full text-[10px]
+    }
+
+    .bar-icon{
+        @apply w-full hover:bg-[#00000031] transition-all duration-300 p-3 rounded-full text-[20px] my-1 -ml-3 relative m-auto shadow-white
+    }
+    .main-color{
+        @apply text-blue-500
+    }
+
+
+
+    .main-body{
+        @apply h-screen flex flex-col justify-center items-center ml-[440px] mr-[20px]
+    }
+    .body{
+        @apply relative ;
+    }
+    .container{
+        @apply relative;
+    }
+    .main-para{
+        @apply text-lg flex w-[750px] justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .para{
+        @apply text-lg flex w-[600px] justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .scroll-project{
+        @apply flex justify-end w-36 items-end m-auto;
+    }
+    .scroll-png{
+        @apply  duration-1000 w-[75px] h-20 transition-all;
+        animation: spin 3s linear infinite;
+        
+    }
+    .scroll-icon{
+        @apply text-[30px] absolute animate-pulse hover:animate-none justify-end items-end mb-6 mr-[25px];
+    }
+    .section{
+        @apply flex flex-row relative;
+    }
+    .section-name{
+        @apply text-[150px] font-['Monoton'] animate-pulse left-5 -mt-0 text-[#00000042] absolute -z-0 top-10;
+    }
+    .exp{
+        @apply flex relative pt-20 flex-row justify-center
+    }
+    .exp-section{
+        @apply w-[150px] flex flex-col justify-center items-center text-center
+    }
+    .number{
+        @apply font-['BungeeShade'] mb-4 text-blue-600 font-[500]
+    }
+}
+
+
+@media (max-width:1279px){
+    
+    h5{
+        @apply text-white
+    }
+
+    h1{
+        @apply text-2xl font-[700] font-['Raleway'] ;
+    }
+    h3{
+        @apply text-xl font-[700] font-['Raleway'] ;
+    }
+    .card{
+        @apply h-screen -z-50 flex flex-col fixed justify-end items-end m-auto gap-14
+    }
+    .card-body{
+        @apply bg-neutral-900 w-screen h-screen p-5 flex-col;
+    }
+
+    .card-title{
+        @apply pl-5 pt-1 fixed top-8 text-[38px] font-[400] font-['Rochester'];
+    }
+    .card-right-title{
+        @apply pr-5 pt-1 top-6 relative text-white text-right font-['Roboto'] text-[18px] font-[400];
+    }
+    .plate{
+        @apply rounded-full flex flex-col m-auto top-10 relative justify-center items-center bg-neutral-300 w-[250px] h-[250px] flex-shrink-0;
+    }
+    .image{
+        @apply w-[235px] h-[235px] hover:w-[245px] hover:h-[245px] transition-all duration-200 rounded-full m-auto justify-center items-center z-50 absolute;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .card-containt{
+        @apply relative text-white top-10 w-full p-10 text-center text-[28px] font-[400] font-['RibeyeMarrow'];
+    }
+
+    .copy-right{
+        @apply text-center font-["Roboto"] top-6 relative text-[rgb(255,255,255,0.36)] font-[400];
+    }
+    .card-link{
+        @apply flex flex-row top-10 justify-center items-center relative;
+    }
+    .link-plate{
+        @apply w-[60px] h-[60px] top-8 flex flex-col relative m-5 shadow-black shadow-md flex-shrink-0 bg-black hover:bg-white transition-all duration-700 ease-in-out rounded-full;
+    }
+    .link-plate:hover{
+        @apply transition-all duration-300 ease-in-out;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .icon{
+        @apply flex justify-center items-center w-full h-full text-[25px] text-white hover:text-[30px] hover:text-black transition-all duration-500 ease-in-out;
+    }
+    .contact{
+        @apply w-[144px] h-[36px] transition-all duration-300 bg-blue-600 hover:bg-blue-800  shadow-lg top-20 relative shadow-black pr-5 m-auto pl-5 rounded-full justify-center items-center text-white text-center;
+    }
+    .contact button{
+        @apply relative top-[6px]
+    }
+
+
+    .nav-continer{
+        @apply flex ;
+    }
+    .nav{
+        @apply flex flex-col h-screen justify-center items-center m-auto bg-black;
+    }
+    .nav-bar{
+        @apply hidden
+    }
+
+    .nav-btn{
+        @apply fixed w-10 h-10 right-0 flex flex-col z-50
+    }
+    .nav-btn-icon{
+        @apply flex justify-center items-center  text-[30px] bg-black p-2 mr-5 fixed rounded-[20px_0px_10px_0]
+    }
+
+    .main-color{
+        @apply text-blue-500
+    }
+
+
+
+    .main-body{
+        @apply flex justify-center w-screen items-center h-[110vh] relative top-[100vh] bg-neutral-800
+    }
+    .body{
+        @apply relative m-10;
+    }
+    .container{
+        @apply relative;
+    }
+    .main-para{
+        @apply text-lg  flex mr-5 ml-5 justify-center items-center m-auto text-justify relative top-10 text-gray-300;
+    }
+    .para{
+        @apply text-lg flex mr-5 ml-5 m-auto justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .scroll-project{
+        @apply justify-end w-36 items-end m-auto hidden;
+    }
+    .scroll-png{
+        @apply  duration-1000 w-[75px] h-20 transition-all;
+        animation: spin 3s linear infinite;
+        
+    }
+    .scroll-icon{
+        @apply text-[30px] absolute animate-pulse hover:animate-none justify-end items-end mb-6 mr-[25px];
+    }
+    .section{
+        @apply flex flex-row relative;
+    }
+    .section-name{
+        @apply text-[120px] w-full justify-center items-center font-['Monoton'] animate-pulse  mt-40 text-[#000000a9] absolute -z-0 rotate-90;
+    }
+    .exp{
+        @apply flex relative pt-20 flex-row justify-center
+    }
+    .exp-section{
+        @apply w-[150px] flex flex-col justify-center items-center text-center
+    }
+    .number{
+        @apply font-['BungeeShade'] mb-4 text-blue-600 font-[500]
+    }
+    .heading{
+        @apply relative mr-5 ml-5
+    }
+
+    .role{
+        @apply text-lg font-['roboto'] font-[800]
+    }
+    .sub-heading{
+        @apply mr-20 ml-16
+    }
+    .company-name{
+        @apply text-[15px] font-['roboto'] font-[400] text-white
+    }
+}
+
+@media (max-height:750px ) and (max-width:1279px){
+    h5{
+        @apply text-white
+    }
+
+    h1{
+        @apply text-2xl font-[700] font-['Raleway'] ;
+    }
+    h3{
+        @apply text-xl font-[700] font-['Raleway'] ;
+    }
+
+    .card-right-title{
+        @apply pr-5 pt-0 top-0 relative text-white text-right font-['Roboto'] text-[18px] font-[400];
+    }
+    .plate{
+        @apply rounded-full flex flex-col m-auto top-3 relative justify-center items-center bg-neutral-300 w-[250px] h-[250px] flex-shrink-0;
+    }
+    .image{
+        @apply w-[235px] h-[235px] hover:w-[245px] hover:h-[245px] transition-all duration-200 rounded-full m-auto justify-center items-center z-50 absolute;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .card-containt{
+        @apply relative text-white top-3 w-full p-10 text-center text-[28px] font-[400] font-['RibeyeMarrow'];
+    }
+
+    .copy-right{
+        @apply text-center font-["Roboto"] -top-1 relative text-[rgb(255,255,255,0.36)] font-[400];
+    }
+    .card-link{
+        @apply flex flex-row -top-4 justify-center items-center relative;
+    }
+    .link-plate{
+        @apply w-[60px] h-[60px] top-8 flex flex-col relative m-5 shadow-black shadow-md flex-shrink-0 bg-black hover:bg-white transition-all duration-700 ease-in-out rounded-full;
+    }
+    .link-plate:hover{
+        @apply transition-all duration-300 ease-in-out;
+        animation: boxShadowAnimation 2s infinite linear;
+    }
+    .icon{
+        @apply flex justify-center items-center w-full h-full text-[25px] text-white hover:text-[30px] hover:text-black transition-all duration-500 ease-in-out;
+    }
+    .contact{
+        @apply w-[144px] h-[36px] transition-all duration-300 bg-blue-600 hover:bg-blue-800  shadow-lg top-5 relative shadow-black pr-5 m-auto pl-5 rounded-full justify-center items-center text-white text-center;
+    }
+    .contact button{
+        @apply relative top-[6px]
+    }
+
+    .main-body{
+        @apply flex flex-col justify-center w-screen items-center h-[150vh] relative bottom-[100vh] top-[100vh] bg-neutral-800
+    }
+    .body{
+        @apply relative mt-40 h-screen;
+    }
+    .container{
+        @apply relative;
+    }
+    .main-para{
+        @apply text-lg flex mr-5 ml-5 justify-center items-center m-auto text-justify relative top-10 text-gray-300;
+    }
+    .para{
+        @apply text-lg flex mr-5 ml-5 m-auto justify-start items-start text-justify relative top-10 text-gray-300;
+    }
+    .scroll-project{
+        @apply justify-end w-36 items-end m-auto hidden;
+    }
+    .scroll-png{
+        @apply  duration-1000 w-[75px] h-20 transition-all;
+        animation: spin 3s linear infinite;
+        
+    }
+    .scroll-icon{
+        @apply text-[30px] absolute animate-pulse hover:animate-none justify-end items-end mb-6 mr-[25px];
+    }
+    .section{
+        @apply flex flex-row relative;
+    }
+    .section-name{
+        @apply text-[100px] font-['Monoton'] animate-pulse left-5 mt-40 text-[#000000a8] absolute -z-0 top-10;
+    }
+    .exp{
+        @apply flex relative pt-20 flex-row justify-center
+    }
+    .exp-section{
+        @apply w-[150px] flex flex-col justify-center items-center text-center
+    }
+    .number{
+        @apply font-['BungeeShade'] mb-4 text-blue-600 font-[500]
+    }
+    .heading{
+        @apply relative mr-2 ml-2
+    }
+}

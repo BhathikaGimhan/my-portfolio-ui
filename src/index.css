@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    @apply bg-neutral-800 text-white;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Rochester';
+    src: url('./assets/fonts/Rochester-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RibeyeMarrow';
+    src: url('./assets/fonts/RibeyeMarrow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-VariableFontwght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Monoton';
+    src: url('./assets/fonts/Monoton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BungeeShade';
+    src: url('./assets/fonts/BungeeShade-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
