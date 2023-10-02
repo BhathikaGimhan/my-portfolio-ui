@@ -48,6 +48,10 @@
     }
 }
 
+.skill-card .skill-heading{
+    @apply text-base;
+}
+
 .list-view{
     @apply flex flex-col justify-start items-start gap-10;
 }
@@ -177,7 +181,7 @@
 
 
     .main-body{
-        @apply h-screen flex flex-col justify-center items-center ml-[650px] mr-[70px]
+        @apply h-screen flex flex-col justify-center ml-[650px] mr-[190px]
     }
     .body{
         @apply relative ;

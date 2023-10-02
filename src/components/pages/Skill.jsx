@@ -6,7 +6,7 @@ import React from 'react'
 const Skill = () => {
   return (
     <React.Fragment>
-        <div className="main-body">
+        <div className="main-body right-6">
             <div className="body">
                 <div className="section-name">Skills</div>
                 <div className="container">

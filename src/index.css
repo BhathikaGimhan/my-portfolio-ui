@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+
+body {
     @apply bg-neutral-800 text-white;
     overflow-x: hidden;
 }
@@ -33,12 +34,14 @@ body{
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Monoton';
     src: url('./assets/fonts/Monoton-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'BungeeShade';
     src: url('./assets/fonts/BungeeShade-Regular.ttf') format('truetype');
