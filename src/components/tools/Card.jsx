@@ -19,22 +19,22 @@ const Card = () => {
             <div className="copy-right">© 2023 Bhathika. All Rights Reserved</div>
             <div className="card-link">
               <div className="link-plate">
-                <a className='icon' href="bhathikagimhan.link" target='_blank'>
+                <a className='icon' href="https://www.linkedin.com/in/bhathika-gimhan/" target='_blank'>
                   <FontAwesomeIcon icon={faLinkedinIn} />
                 </a>
               </div>
               <div className="link-plate">
-                <a className='icon' href="bhathikagimhan.link" target='_blank'>
+                <a className='icon' href="https://web.facebook.com/bhathika.gimhan.14/" target='_blank'>
                   <FontAwesomeIcon icon={faFacebookF} />
                 </a>
               </div>
               <div className="link-plate">
-                <a className='icon'  href="bhathikagimhan.link" target='_blank'>
+                <a className='icon'  href="https://github.com/BhathikaGimhan" target='_blank'>
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               </div>
               <div className="link-plate">
-                <a className='icon'  href="bhathikagimhan.link" target='_blank'>
+                <a className='icon'  href="https://stackoverflow.com/users/14588298/bhathika" target='_blank'>
                   <FontAwesomeIcon icon={faStackOverflow} />
                 </a>
               </div>
